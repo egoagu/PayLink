@@ -11,8 +11,10 @@ namespace PayLink.Controllers
     [ApiController]
     public class PaymentController : ControllerBase
     {
-        private const string PaymentBaseUrl = "https://egoagu.com/pay/"; //move to appsettings later
+        private readonly IConfiguration Config;
 
+        private const string PaymentBaseUrl = "https://egoagu.com/pay/"; //move to appsettings later
+        
         private static string GenerateRandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
